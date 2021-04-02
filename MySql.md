@@ -19,7 +19,7 @@ CREATE TABLE `db_devmedia`.`cliente` (
     `DataNascimento` DATE NULL,
     `Peso` REAL NULL,
     PRIMARY KEY (`idCliente`)
-);
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 ;
 ```
 
 Para insertar valores dentro da tabela basta utilizar esse comando: 
@@ -31,4 +31,30 @@ INSERT INTO cliente (
     peso
 )
 VALUES ('Tiago', 'M', '1999-07-06', 60.50);
+```
+
+Para criar Index dentro da tabela basta utilizar esse comando: 
+```sql
+ALTER TABLE `bd_devmedia`.`cliente`
+ADD INDEX `Index_nome` (`Nome` ASC);
+```
+O sql altera a tabela para poder adicionar o index. De forma ASC -> Ascendente.
+Para deletar o Index, basta executar esse comando: 
+```sql
+ALTER TABLE `bd_devmedia`.`cliente`
+DROP INDEX `Index_nome`;
+```
+
+Para criar Index's compostos, basta executar o comando: 
+```sql
+ALTER TABLE `bd_devmedia`.`cliente`
+ADD INDEX `Index_Sexo_Peso` (`Sexo` ASC, `Peso` ASC);
+```
+
+Para atualizar os Index's compostos é necessário primeiro dropar o index e depois
+criar com os valores corretos:
+```sql 
+ALTER TABLE `bd_devmedia`.`cliente`
+DROP INDEX `Index_Sexo_Peso` ,
+ADD INDEX `Index_Sexo_Peso` (`Sexo` ASC, `DataNascimento` ASC);
 ```
