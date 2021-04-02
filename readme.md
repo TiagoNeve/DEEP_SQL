@@ -84,3 +84,44 @@ SELECT nome, telefone FROM Cliente WHERE nome = 'Tiago';
 # Irá trazer os valores da coluna nome, telefone da tabela Cliente, onde o nome = 'Tiago'.
 ==================================================================
 ```
+### EXERCICIO
+```sql
+    DELETE FROM produtos; # Apaga todos os dados da tabela;
+    SELECT nome, idade FROM usuarios; # Forma correta de utilizar um select.
+    UPDATE produtos SET produto = 'Galaxy Note 20 Ultra' WHERE id = 2;
+    # Irá atualizar da tabela produtos, a coluna produto com o valor tal, onde o id é tal.
+    INSERT INTO mangas(titulo, estoque) VALUES('Boruto', 1);
+    # Irá adicionar os valores correspondentes nas colunas correspondentes.
+    DELETE FROM usuarios WHERE id = 1; 
+    # Deleta a linha onde o id é igual a 1.
+    SELECT titulo FROM jogos WHERE classificacao = 'L';
+    # Irá retornar os valores da coluna titulo, da tabela jogos, onde a classificacao é L.
+    INSERT INTO usuarios (nome, idade) VALUES ('Lucas', 17);
+    SELECT loja FROM lojas WHERE aberta = 0;
+    UPDATE usuarios SET status = 1;
+    INSERT INTO lojas(loja, aberta) VALUES ('Shoptime', 1);
+    INSERT INTO jogos(titulo, classificacao) VALUES ('Tetris Effect Connect', 'L');
+    UPDATE jogos SET classificacao = 18 WHERE id = 1;
+    SELECT id, nome, preco FROM produtos;
+    SELECT nome, telefone, email FROM contatos WHERE id = 3;
+    SELECT nome, telefone FROM contatos;
+    DELETE FROM mangas WHERE id = 3;
+    DELETE FROM contatos WHERE id = 4;
+    INSERT INTO produtos(nome, preço) VALUES ('Atari VCS', 2400);
+    DELETE FROM usuarios WHERE id = 2;
+    DELETE FROM jogos WHERE id = 6;
+    UPDATE funcionarios SET nome = 'Roberto' WHERE id = 3;
+    INSERT INTO produtos(produto, fabricante) VALUES ('Moto Z', 'Motorola');
+    UPDATE lojas SET loja = 'Casa e Video' WHERE id = 3;
+    INSERT INTO montadoras(nome, pais) VALUES ('Dodge', 'EUA');
+    DELETE FROM jogos WHERE classificacao = 10;
+    SELECT nome, pais FROM montadoras;
+    SELECT nome, pais FROM montadoras;
+    SELECT titulo FROM mangas;
+    SELECT produto FROM produtos;
+    DELETE FROM produtos WHERE id = 4;
+    INSERT INTO produtos(produto, fabricante) VALUES('IPhone 12', 'Apple');
+    UPDATE mangas SET estoque = 1 WHERE estoque = 0;
+    SELECT loje FROM lojas WHERE aberta = 1;
+    
+```
