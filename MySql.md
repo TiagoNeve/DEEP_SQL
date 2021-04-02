@@ -81,3 +81,16 @@ add constraint `FK_Cliente`
     on delete no action
     on update on action; 
 ```
+
+### Otimização de consultas no MySql
+
+Basicamente utilizar index's pode ajudar bastante na consulta no banco de dados
+mas como construir esses index buscando uma melhora significativa?
+Sem os index's a consulta pela tabela se dá de linha a linha, no caso todo o banco
+de dados é varrido para buscar os itens que o usuário deseja.
+
+Na bsuca de valores utilizando index's se um usuário solicitar os valores de um
+id com o número 13 e se esse id estiver com index, o mesmo terá uma ordem ascendente
+e desta forma o banco vai começar do 1 até o 13 e quando chegar no 14 o mesmo irá
+parar de procurar, pois ele sabe que a coluna id é indexada em ascendência.
+
