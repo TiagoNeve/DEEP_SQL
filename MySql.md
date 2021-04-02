@@ -58,3 +58,26 @@ ALTER TABLE `bd_devmedia`.`cliente`
 DROP INDEX `Index_Sexo_Peso` ,
 ADD INDEX `Index_Sexo_Peso` (`Sexo` ASC, `DataNascimento` ASC);
 ```
+
+```sql
+create table `bd_devmedia`.`telefone` (
+    `idTelefone` INT(11) NOT NULL auto_increment,
+    `ddd` int(2) not null,
+    `telefone` int(9) not null,
+    `idCliente` int not null,
+    primary key (`idTelefone`)
+) ;
+```
+
+Para criar uma foreign key, depois que a tabela for construida basta executar
+o seguinte comando: 
+```sql
+alter table `bd_devmedia`.`telefone`
+add index `FK_Cliente_idx` (`idcliente` ASC)
+alter table `bd_devmedia`.`telefone`
+add constraint `FK_Cliente`
+    foreign key ('idcliente')
+    references `bd_devmedia`.`cliente` (`idCliente`)
+    on delete no action
+    on update on action; 
+```
